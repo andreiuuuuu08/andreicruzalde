@@ -1216,15 +1216,21 @@ async def get_sms_status():
 @api_router.get("/settings")
 async def get_settings(current_user: dict = Depends(get_current_user)):
     """Get system settings"""
-    settings = await db.settings.find_one({"type": "system"}, {"_id": 0})
+    settings = await db.settings.find_one({"type": "system"}, {"_id": 0, "type": 0})
     if not settings:
-        settings = {
+        default_settings = {
             "type": "system",
             "grace_period_minutes": 15,
             "sms_notifications_enabled": True,
             "late_threshold_minutes": 30
         }
-        await db.settings.insert_one(settings)
+        await db.settings.insert_one(default_settings)
+        # Return without 'type' field
+        settings = {
+            "grace_period_minutes": 15,
+            "sms_notifications_enabled": True,
+            "late_threshold_minutes": 30
+        }
     return settings
 
 @api_router.put("/settings")
