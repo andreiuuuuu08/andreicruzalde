@@ -147,10 +147,10 @@ export default function RegisterPage() {
                     <SelectTrigger className="h-11" data-testid="register-role-select">
                       <SelectValue placeholder="Select your role" />
                     </SelectTrigger>
-                    <SelectContent>
-                      <SelectItem value="student">Student</SelectItem>
-                      <SelectItem value="teacher">Teacher</SelectItem>
-                      <SelectItem value="admin">Administrator</SelectItem>
+                    <SelectContent position="popper" sideOffset={4}>
+                      <SelectItem value="student" data-testid="role-student">Student</SelectItem>
+                      <SelectItem value="teacher" data-testid="role-teacher">Teacher</SelectItem>
+                      <SelectItem value="admin" data-testid="role-admin">Administrator</SelectItem>
                     </SelectContent>
                   </Select>
                 </div>
