@@ -158,10 +158,6 @@ export const dashboardAPI = {
   getStats: () => api.get('/dashboard/stats')
 };
 
-export const galleryAPI = {
-  getPhotos: (params) => api.get('/gallery', { params })
-};
-
 export const settingsAPI = {
   get: () => api.get('/settings'),
   update: (data) => api.put('/settings', data)
