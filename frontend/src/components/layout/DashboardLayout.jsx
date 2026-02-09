@@ -18,7 +18,6 @@ import {
   Calendar, 
   Camera, 
   BarChart3, 
-  Image, 
   Settings,
   LogOut,
   Menu,
