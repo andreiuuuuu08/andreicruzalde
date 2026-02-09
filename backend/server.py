@@ -1249,35 +1249,6 @@ async def update_settings(updates: SettingsUpdate, current_user: dict = Depends(
     
     return {"message": "Settings updated successfully"}
 
-# ============ PHOTO GALLERY ROUTES ============
-
-@api_router.get("/gallery")
-async def get_photo_gallery(
-    class_id: Optional[str] = None,
-    date: Optional[str] = None,
-    limit: int = 50,
-    current_user: dict = Depends(get_current_user)
-):
-    """Get attendance photo gallery"""
-    query = {"photo_filename": {"$exists": True, "$ne": None}}
-    
-    if class_id:
-        query['class_id'] = class_id
-    
-    if date:
-        query['timestamp'] = {"$regex": f"^{date}"}
-    
-    records = await db.attendance.find(query, {"_id": 0}).sort("timestamp", -1).limit(limit).to_list(limit)
-    
-    return [{
-        "id": r['id'],
-        "student_name": r['student_name'],
-        "class_name": r['class_name'],
-        "status": r['status'],
-        "timestamp": r['timestamp'],
-        "photo_url": f"/api/attendance/photo/{r['photo_filename']}"
-    } for r in records]
-
 # ============ DASHBOARD STATS ============
 
 @api_router.get("/dashboard/stats")
