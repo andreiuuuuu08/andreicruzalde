@@ -166,6 +166,17 @@ class SettingsUpdate(BaseModel):
     sms_notifications_enabled: Optional[bool] = None
     late_threshold_minutes: Optional[int] = None
 
+class PasswordResetRequest(BaseModel):
+    email: EmailStr
+
+class PasswordResetVerify(BaseModel):
+    token: str
+    new_password: str
+
+class PasswordChange(BaseModel):
+    current_password: str
+    new_password: str
+
 # ============ UTILITY FUNCTIONS ============
 
 def hash_password(password: str) -> str:
