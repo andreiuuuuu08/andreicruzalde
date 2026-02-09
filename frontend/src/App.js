@@ -16,7 +16,7 @@ import StudentsPage from "@/pages/dashboard/StudentsPage";
 import AttendancePage from "@/pages/dashboard/AttendancePage";
 import ScannerPage from "@/pages/dashboard/ScannerPage";
 import ReportsPage from "@/pages/dashboard/ReportsPage";
-import GalleryPage from "@/pages/dashboard/GalleryPage";
+// Gallery removed - photos stored in database for recognition only
 import SettingsPage from "@/pages/dashboard/SettingsPage";
 import FaceRegistrationPage from "@/pages/dashboard/FaceRegistrationPage";
 
