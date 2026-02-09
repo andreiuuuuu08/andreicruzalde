@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { useAuth } from '@/context/AuthContext';
+import { useTheme } from '@/context/ThemeContext';
 import { analyticsAPI, dashboardAPI, classesAPI } from '@/context/AuthContext';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Badge } from '@/components/ui/badge';
+import { cn } from '@/lib/utils';
 import { 
   Users, 
   BookOpen, 
@@ -34,6 +36,7 @@ const COLORS = ['#4338CA', '#D97706', '#BE123C'];
 
 export default function DashboardHome() {
   const { user } = useAuth();
+  const { isDark } = useTheme();
   const [stats, setStats] = useState(null);
   const [overview, setOverview] = useState(null);
   const [classes, setClasses] = useState([]);
