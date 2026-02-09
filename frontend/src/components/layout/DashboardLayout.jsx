@@ -35,7 +35,6 @@ const navigation = [
   { name: 'Attendance', href: '/dashboard/attendance', icon: Calendar, roles: ['admin', 'teacher', 'student'] },
   { name: 'Scanner', href: '/dashboard/scanner', icon: Camera, roles: ['admin', 'teacher'] },
   { name: 'Reports', href: '/dashboard/reports', icon: BarChart3, roles: ['admin', 'teacher'] },
-  { name: 'Gallery', href: '/dashboard/gallery', icon: Image, roles: ['admin', 'teacher', 'student'] },
   { name: 'Settings', href: '/dashboard/settings', icon: Settings, roles: ['admin', 'teacher', 'student'] },
 ];
 
