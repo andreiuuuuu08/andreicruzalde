@@ -85,10 +85,13 @@ export default function DashboardHome() {
       {/* Welcome Section */}
       <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
         <div>
-          <h1 className="text-2xl sm:text-3xl font-bold text-slate-900">
+          <h1 className={cn(
+            "text-2xl sm:text-3xl font-bold",
+            isDark ? "text-white" : "text-slate-900"
+          )}>
             Welcome back, {user?.name?.split(' ')[0]}!
           </h1>
-          <p className="text-slate-600 mt-1">
+          <p className={cn("mt-1", isDark ? "text-slate-400" : "text-slate-600")}>
             Here's what's happening with your attendance today.
           </p>
         </div>
