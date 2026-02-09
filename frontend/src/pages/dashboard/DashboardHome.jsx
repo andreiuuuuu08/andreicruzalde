@@ -109,29 +109,29 @@ export default function DashboardHome() {
       {/* Stats Cards */}
       {user?.role === 'admin' && overview && (
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-          <Card className="card-stats">
+          <Card className={cn("border-l-4 border-indigo-600 rounded-r-lg p-6 shadow-sm", isDark && "bg-slate-800 border-slate-700")}>
             <CardContent className="p-0">
               <div className="flex items-center justify-between">
                 <div>
-                  <p className="text-sm font-medium text-slate-500">Total Students</p>
-                  <p className="text-3xl font-bold text-slate-900 mt-1">{overview.total_students}</p>
+                  <p className={cn("text-sm font-medium", isDark ? "text-slate-400" : "text-slate-500")}>Total Students</p>
+                  <p className={cn("text-3xl font-bold mt-1", isDark ? "text-white" : "text-slate-900")}>{overview.total_students}</p>
                 </div>
-                <div className="w-12 h-12 bg-indigo-100 rounded-xl flex items-center justify-center">
-                  <Users className="w-6 h-6 text-indigo-600" />
+                <div className={cn("w-12 h-12 rounded-xl flex items-center justify-center", isDark ? "bg-indigo-900/50" : "bg-indigo-100")}>
+                  <Users className="w-6 h-6 text-indigo-500" />
                 </div>
               </div>
             </CardContent>
           </Card>
 
-          <Card className="card-stats">
+          <Card className={cn("border-l-4 border-teal-600 rounded-r-lg p-6 shadow-sm", isDark && "bg-slate-800 border-slate-700")}>
             <CardContent className="p-0">
               <div className="flex items-center justify-between">
                 <div>
-                  <p className="text-sm font-medium text-slate-500">Total Classes</p>
-                  <p className="text-3xl font-bold text-slate-900 mt-1">{overview.total_classes}</p>
+                  <p className={cn("text-sm font-medium", isDark ? "text-slate-400" : "text-slate-500")}>Total Classes</p>
+                  <p className={cn("text-3xl font-bold mt-1", isDark ? "text-white" : "text-slate-900")}>{overview.total_classes}</p>
                 </div>
-                <div className="w-12 h-12 bg-teal-100 rounded-xl flex items-center justify-center">
-                  <BookOpen className="w-6 h-6 text-teal-600" />
+                <div className={cn("w-12 h-12 rounded-xl flex items-center justify-center", isDark ? "bg-teal-900/50" : "bg-teal-100")}>
+                  <BookOpen className="w-6 h-6 text-teal-500" />
                 </div>
               </div>
             </CardContent>
