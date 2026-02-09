@@ -8,6 +8,8 @@ import { AuthProvider, useAuth } from "@/context/AuthContext";
 import LandingPage from "@/pages/LandingPage";
 import LoginPage from "@/pages/LoginPage";
 import RegisterPage from "@/pages/RegisterPage";
+import ForgotPasswordPage from "@/pages/ForgotPasswordPage";
+import ResetPasswordPage from "@/pages/ResetPasswordPage";
 import DashboardLayout from "@/components/layout/DashboardLayout";
 import DashboardHome from "@/pages/dashboard/DashboardHome";
 import ClassesPage from "@/pages/dashboard/ClassesPage";
@@ -16,7 +18,6 @@ import StudentsPage from "@/pages/dashboard/StudentsPage";
 import AttendancePage from "@/pages/dashboard/AttendancePage";
 import ScannerPage from "@/pages/dashboard/ScannerPage";
 import ReportsPage from "@/pages/dashboard/ReportsPage";
-// Gallery removed - photos stored in database for recognition only
 import SettingsPage from "@/pages/dashboard/SettingsPage";
 import FaceRegistrationPage from "@/pages/dashboard/FaceRegistrationPage";
 
