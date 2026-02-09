@@ -176,10 +176,19 @@ export default function LoginPage() {
 
                 {/* Password Field */}
                 <div className="space-y-2">
-                  <Label htmlFor="password" className="flex items-center gap-1">
-                    Password
-                    <span className="text-red-500" aria-hidden="true">*</span>
-                  </Label>
+                  <div className="flex items-center justify-between">
+                    <Label htmlFor="password" className="flex items-center gap-1">
+                      Password
+                      <span className="text-red-500" aria-hidden="true">*</span>
+                    </Label>
+                    <Link 
+                      to="/forgot-password" 
+                      className="text-sm text-indigo-700 hover:text-indigo-800 font-medium focus:outline-none focus:underline"
+                      tabIndex={0}
+                    >
+                      Forgot password?
+                    </Link>
+                  </div>
                   <div className="relative">
                     <Input
                       id="password"
