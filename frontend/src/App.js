@@ -124,7 +124,6 @@ function AppRoutes() {
             </ProtectedRoute>
           }
         />
-        <Route path="gallery" element={<GalleryPage />} />
         <Route path="settings" element={<SettingsPage />} />
         <Route path="face-registration" element={<FaceRegistrationPage />} />
       </Route>
